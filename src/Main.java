@@ -9,9 +9,10 @@ public class Main {
             int attachment = 15000;
             int total = 0;
             int months = 1;
+            double percent = 1D / 100;
             while (total < 2_459_000) {
                 total += attachment;
-                total += total / 100;
+                total = (int) (total * (1 + percent));
                 System.out.println("Месяц " + months +
                         " , сумма накоплений равна " + total + " рублей");
                 months++;
@@ -47,8 +48,9 @@ public class Main {
             System.out.println("Задача 4");
             int total = 15000;
             int month = 1;
+            double percent = 7D / 100;
             while (total < 12_000_000) {
-                total += (total / 100) * 7;
+                total = (int) (total * (1 + percent));
                 System.out.println(month + " месяц, накоплений уже " + total);
                 month++;
             }
@@ -58,8 +60,9 @@ public class Main {
             System.out.println("Задача 5");
             int total = 15000;
             int month = 1;
+            double percent = 7D / 100;
             while (total < 12_000_000) {
-                total = total + ((total / 100) * 7);
+                total = (int) (total * (1 + percent));
                 month++;
                 if (month % 6 == 0) {
                     System.out.println(month + " месяц, накоплений уже " + total);
@@ -72,8 +75,9 @@ public class Main {
             int total = 15000;
             int month = 0;
             int sixMonths = 1;
+            double percent = 7D / 100;
             while (month < (12 * 9)) {
-                total += ((total / 100) * 7);
+                total = (int) (total * (1 + percent));
                 month++;
                 if (month % 6 == 0) {
                     System.out.println(sixMonths + " полугодие, накоплений уже " + total);
@@ -93,11 +97,11 @@ public class Main {
         {
             System.out.println("");
             System.out.println("Задача 8");
-            int period = 79 ;
+            int period = 79;
             int start = 2024 - 200;
             int end = 2024 + 100;
             int startSeeing = 0;
-            for (int year = startSeeing; year < end; year+= period) {
+            for (int year = startSeeing; year < end; year += period) {
                 if (year > start) {
                     System.out.println(year);
                 }
