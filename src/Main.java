@@ -10,19 +10,20 @@ public class Main {
             int total = 0;
             int months = 1;
             while (total < 2_459_000) {
-                total = total + attachment;
+                total += attachment;
+                total += total / 100;
+                System.out.println("Месяц " + months +
+                        " , сумма накоплений равна " + total + " рублей");
                 months++;
             }
-            System.out.println("Месяц " + months +
-                    " , сумма накоплений равна " + total + " рублей");
         }
         {
             System.out.println("");
             System.out.println("Задача 2");
             int i = 1;
             while (i <= 10) {
-                System.out.print(i + " ");
                 i++;
+                System.out.print(i + " ");
             }
             System.out.println("");
             for (int a = 10; a >= 1; a--) {
@@ -33,9 +34,10 @@ public class Main {
             System.out.println("");
             System.out.println("Задача 3");
             int allPeople = 12_000_000;
-            int addedPeople = ((17 - 8) * 12_000);
+            int birthPeoplePer1000 = 17;
+            int deathPeoplePer1000 = 8;
             for (int year = 1; year <= 10; year++) {
-                allPeople = allPeople + addedPeople;
+                allPeople += allPeople * birthPeoplePer1000 / 1000 - allPeople * deathPeoplePer1000 / 1000;
                 System.out.println("Год " + year +
                         " численность населения составляет " + allPeople);
             }
@@ -46,11 +48,10 @@ public class Main {
             int total = 15000;
             int month = 1;
             while (total < 12_000_000) {
+                total += (total / 100) * 7;
                 System.out.println(month + " месяц, накоплений уже " + total);
-                total = total + ((total / 100) * 7);
                 month++;
             }
-            System.out.println(month + " месяц, накоплений уже " + total);
         }
         {
             System.out.println("");
@@ -69,10 +70,10 @@ public class Main {
             System.out.println("");
             System.out.println("Задача 6");
             int total = 15000;
-            int month = 1;
+            int month = 0;
             int sixMonths = 1;
-            while (month <= 108) {
-                total = total + ((total / 100) * 7);
+            while (month < (12 * 9)) {
+                total += ((total / 100) * 7);
                 month++;
                 if (month % 6 == 0) {
                     System.out.println(sixMonths + " полугодие, накоплений уже " + total);
@@ -92,10 +93,12 @@ public class Main {
         {
             System.out.println("");
             System.out.println("Задача 8");
-            int year = 1824;
-            while (year >= 1824 && year <= 2124) {
-                year++;
-                if (year % 79 == 0) {
+            int period = 79 ;
+            int start = 2024 - 200;
+            int end = 2024 + 100;
+            int startSeeing = 0;
+            for (int year = startSeeing; year < end; year+= period) {
+                if (year > start) {
                     System.out.println(year);
                 }
             }
