@@ -7,14 +7,15 @@ public class Main {
         {
             System.out.println("Задача 1");
             int attachment = 15000;
-            int total = 0;
+            double total = 0;
             int months = 1;
-            double percent = 1D / 100;
+            double percent = (1 + (1D / 100));
             while (total < 2_459_000) {
                 total += attachment;
-                total = (int) (total * (1 + percent));
+                total = total * percent;
+                double roundedTotal = Math.round(total * 100.0) / 100.0;
                 System.out.println("Месяц " + months +
-                        " , сумма накоплений равна " + total + " рублей");
+                        " , сумма накоплений равна " + roundedTotal + " рублей");
                 months++;
             }
         }
