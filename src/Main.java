@@ -12,10 +12,8 @@ public class Main {
             double percent = (1 + (1D / 100));
             while (total < 2_459_000) {
                 total += attachment;
-                total = total * percent;
-                double roundedTotal = Math.round(total * 100.0) / 100.0;
-                System.out.println("Месяц " + months +
-                        " , сумма накоплений равна " + roundedTotal + " рублей");
+                total *= percent;
+                System.out.printf("Месяц %s сумма накоплений равна %.2f рублей\n", months, total);
                 months++;
             }
         }
@@ -47,41 +45,41 @@ public class Main {
         {
             System.out.println("");
             System.out.println("Задача 4");
-            int total = 15000;
+            double total = 15000;
             int month = 1;
-            double percent = 7D / 100;
+            double percent = 1 + (7D / 100);
             while (total < 12_000_000) {
-                total = (int) (total * (1 + percent));
-                System.out.println(month + " месяц, накоплений уже " + total);
+                total *= percent;
+                System.out.printf("%s месяц, накоплений уже %.2f\n", month, total);
                 month++;
             }
         }
         {
             System.out.println("");
             System.out.println("Задача 5");
-            int total = 15000;
+            double total = 15000;
             int month = 1;
-            double percent = 7D / 100;
+            double percent = 1 + (7D / 100);
             while (total < 12_000_000) {
-                total = (int) (total * (1 + percent));
+                total *= percent;
                 month++;
                 if (month % 6 == 0) {
-                    System.out.println(month + " месяц, накоплений уже " + total);
+                    System.out.printf("Месяц %s сумма накоплений равна %.2f рублей\n", month, total);
                 }
             }
         }
         {
             System.out.println("");
             System.out.println("Задача 6");
-            int total = 15000;
+            double total = 15000;
             int month = 0;
             int sixMonths = 1;
-            double percent = 7D / 100;
+            double percent = 1 + (7D / 100);
             while (month < (12 * 9)) {
-                total = (int) (total * (1 + percent));
+                total *= percent;
                 month++;
                 if (month % 6 == 0) {
-                    System.out.println(sixMonths + " полугодие, накоплений уже " + total);
+                    System.out.printf("%s полугодие, накоплений уже %.2f\n", sixMonths, total);
                     sixMonths++;
                 }
             }
